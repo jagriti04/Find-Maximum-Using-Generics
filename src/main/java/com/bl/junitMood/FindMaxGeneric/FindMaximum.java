@@ -15,7 +15,7 @@ public class FindMaximum {
 			maxNum = thirdInt;
 		return maxNum;
 	}
-	
+
 	// find the max float number out of three given float number
 	public Float findMaxFloat(Float firstFloat, Float secondFloat, Float thirdFloat) {
 		Float maxNum = firstFloat;
@@ -23,6 +23,16 @@ public class FindMaximum {
 			maxNum = secondFloat;
 		if (maxNum.compareTo(thirdFloat) < 0)
 			maxNum = thirdFloat;
+		return maxNum;
+	}
+
+	// find the max String out of three given Strings
+	public String findMaxString(String firstString, String secondString, String thirdString) {
+		String maxNum = firstString;
+		if (maxNum.compareTo(secondString) < 0)
+			maxNum = secondString;
+		if (maxNum.compareTo(thirdString) < 0)
+			maxNum = thirdString;
 		return maxNum;
 	}
 }

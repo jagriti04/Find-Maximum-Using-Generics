@@ -42,7 +42,7 @@ public class FindMaximumTest {
 
 	// UC2- TC1 finds max float when max float is at first position
 	@Test
-	public void whenMaxFloatAtFirstPlace_returnThatNumber() {
+	public void whenMaxFloatAtFirstPlace_returnMaxNumber() {
 		Float maxNum = findMax.findMaxFloat(25.3f, 12.12f, 16.8f);
 		Assert.assertEquals((Float) 25.3f, maxNum);
 	}
@@ -59,5 +59,26 @@ public class FindMaximumTest {
 	public void whenMaxFloatAtThirdPlace_returnMaxNumber() {
 		Float maxNum = findMax.findMaxFloat(25.3f, 32.12f, 86.8f);
 		Assert.assertEquals((Float) 86.8f, maxNum);
+	}
+
+	// UC3- TC1 finds max String when max String is at first position
+	@Test
+	public void whenMaxStringAtFirstPlace_returnMaxString() {
+		String maxString = findMax.findMaxString("Peach", "Banana", "Apple");
+		Assert.assertEquals("Peach", maxString);
+	}
+
+	// UC3- TC2 finds max String when max String is at second position
+	@Test
+	public void whenMaxStringAtSecondPlace_returnMaxString() {
+		String maxString = findMax.findMaxString("Banana", "Peach", "Apple");
+		Assert.assertEquals("Peach", maxString);
+	}
+
+	// UC3- TC3 finds max String when max String is at third position
+	@Test
+	public void whenMaxStringAtThirdPlace_returnMaxString() {
+		String maxString = findMax.findMaxString("Banana", "Apple", "Peach");
+		Assert.assertEquals("Peach", maxString);
 	}
 }
