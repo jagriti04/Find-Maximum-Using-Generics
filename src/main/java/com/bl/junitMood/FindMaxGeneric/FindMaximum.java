@@ -15,4 +15,14 @@ public class FindMaximum {
 			maxNum = thirdInt;
 		return maxNum;
 	}
+	
+	// find the max float number out of three given float number
+	public Float findMaxFloat(Float firstFloat, Float secondFloat, Float thirdFloat) {
+		Float maxNum = firstFloat;
+		if (maxNum.compareTo(secondFloat) < 0)
+			maxNum = secondFloat;
+		if (maxNum.compareTo(thirdFloat) < 0)
+			maxNum = thirdFloat;
+		return maxNum;
+	}
 }
