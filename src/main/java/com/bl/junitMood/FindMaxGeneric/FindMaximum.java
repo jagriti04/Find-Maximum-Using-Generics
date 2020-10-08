@@ -23,9 +23,22 @@ public class FindMaximum <E extends Comparable<E>> {
 			if (maximum.compareTo(iter) < 0)
 				maximum = iter;
 		}
+		printMax(maximum, items);
 		return maximum;
 	}
 	
+	// print maximum method
+	@SafeVarargs
+	public static <E> void printMax(E max, E ...items) {
+		System.out.println("Find max of: ");
+		for (E iter : items) {
+			System.out.println(iter);
+		}
+		System.out.println("Maximum is - " + max);
+		System.out.println(" ---------- ");
+	}
+	
+
 	public E findMaximum() {
 		return findMaximum(this.firstObj, this.secondObj, this.thirdObj);
 	}
