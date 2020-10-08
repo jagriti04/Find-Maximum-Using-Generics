@@ -3,6 +3,7 @@ package com.bl.junitMood.FindMaxGeneric;
 public class FindMaximum <E extends Comparable<E>> {
 	E firstObj, secondObj, thirdObj;
 	
+	// constructor with parameters
 	public FindMaximum (E first, E second, E third) {
 		this.firstObj = first;
 		this.secondObj = second;
@@ -15,13 +16,13 @@ public class FindMaximum <E extends Comparable<E>> {
 	}
 
 	// single method to calculate maximum for Integer, Float or String
-	public static <E extends Comparable<E>> E findMaximum(E firstItem, E secondItem, E thirdItem) {
-		System.out.println("Find max of: " + firstItem + " " + secondItem + " " + thirdItem);
-		E maximum = firstItem;
-		if (maximum.compareTo(secondItem) < 0)
-			maximum = secondItem;
-		if (maximum.compareTo(thirdItem) < 0)
-			maximum = thirdItem;
+	@SafeVarargs
+	public static <E extends Comparable<E>> E findMaximum(E ...items) {
+		E maximum = items[0];
+		for (E iter : items) {
+			if (maximum.compareTo(iter) < 0)
+				maximum = iter;
+		}
 		return maximum;
 	}
 	

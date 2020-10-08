@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class FindMaximumTest {
-	//to print welcome message
+	// to print welcome message
 	@Test
 	public void whenCallWelcomeMethod_shouldReturnTrue() {
 		boolean welcomeReturns = FindMaximum.printWelcomeMsg();
@@ -73,21 +73,37 @@ public class FindMaximumTest {
 		String maxString = FindMaximum.findMaximum("Banana", "Apple", "Peach");
 		Assert.assertEquals("Peach", maxString);
 	}
-	
-	//UC3-Refactor2- test case for using generic class
+
+	// UC3-Refactor2- test case for using generic class
 	@Test
 	public void integersGivenInGenericClass_shouldReturnMaxInt() {
 		Integer maxInt = new FindMaximum<Integer>(25, 4, 16).findMaximum();
 		Assert.assertEquals((Integer) 25, maxInt);
 	}
+
 	@Test
 	public void floatGivenInGenericClass_shouldReturnMaxFloat() {
 		Float maxFloat = new FindMaximum<Float>(25.4f, 44.5f, 16.10f).findMaximum();
 		Assert.assertEquals((Float) 44.5f, maxFloat);
 	}
+
 	@Test
 	public void stringsGivenInGenericClass_shouldReturnMaxString() {
 		String maxString = new FindMaximum<String>("Banana", "Apple", "Peach").findMaximum();
+		Assert.assertEquals("Peach", maxString);
+	}
+
+	// UC4 find max of more than three numbers
+	@Test
+	public void moreThanThreeIntGiven_shouldReturnMaxInt() {
+		Integer maxNum = FindMaximum.findMaximum(25, 4, 16, 64, 5);
+		Assert.assertEquals((Integer) 64, maxNum);
+	}
+
+	// UC4 find max of more than three strings
+	@Test
+	public void moreThanThreeStringsGiven_shouldReturnMaxString() {
+		String maxString = FindMaximum.findMaximum("Banana", "Apple", "Peach", "Orange");
 		Assert.assertEquals("Peach", maxString);
 	}
 }
