@@ -6,33 +6,14 @@ public class FindMaximum {
 		return true;
 	}
 
-	// find the max integer out of three given integers
-	public Integer findMaxInteger(Integer firstInt, Integer secondInt, Integer thirdInt) {
-		Integer maxNum = firstInt;
-		if (maxNum.compareTo(secondInt) < 0)
-			maxNum = secondInt;
-		if (maxNum.compareTo(thirdInt) < 0)
-			maxNum = thirdInt;
-		return maxNum;
-	}
-
-	// find the max float number out of three given float number
-	public Float findMaxFloat(Float firstFloat, Float secondFloat, Float thirdFloat) {
-		Float maxNum = firstFloat;
-		if (maxNum.compareTo(secondFloat) < 0)
-			maxNum = secondFloat;
-		if (maxNum.compareTo(thirdFloat) < 0)
-			maxNum = thirdFloat;
-		return maxNum;
-	}
-
-	// find the max String out of three given Strings
-	public String findMaxString(String firstString, String secondString, String thirdString) {
-		String maxNum = firstString;
-		if (maxNum.compareTo(secondString) < 0)
-			maxNum = secondString;
-		if (maxNum.compareTo(thirdString) < 0)
-			maxNum = thirdString;
-		return maxNum;
+	// single method to calculate maximum for Integer, Float or String
+	public <E extends Comparable<E>> E findMaximum(E firstItem, E secondItem, E thirdItem) {
+		System.out.println("Find max of: " + firstItem + " " + secondItem + " " + thirdItem);
+		E maximum = firstItem;
+		if (maximum.compareTo(secondItem) < 0)
+			maximum = secondItem;
+		if (maximum.compareTo(thirdItem) < 0)
+			maximum = thirdItem;
+		return maximum;
 	}
 }
